@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Work",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Body": {
+      "type": "blocks"
+    },
+    "work": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::work.work",
+      "inversedBy": "works"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::work.work",
+      "mappedBy": "work"
+    },
+    "TitleEN": {
+      "type": "string"
+    },
+    "BodyEN": {
+      "type": "blocks"
+    },
+    "Credit": {
+      "type": "blocks"
+    },
+    "TypeDeProjet": {
+      "type": "string"
+    },
+    "TypeDeProjetEN": {
+      "type": "string"
+    },
+    "Poem": {
+      "type": "blocks"
+    },
+    "PoemEN": {
+      "type": "blocks"
+    }
+  }
+}
